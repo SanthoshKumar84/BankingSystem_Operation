@@ -2,10 +2,14 @@ import os
 from datetime import datetime
 import getpass
 
-ACCOUNTS_FILE = 'accounts.txt'  ### accounts file
-TRANSACTIONS_FILE = 'transactions.txt'  ###transaction file
-FD_FILE = 'fixed_deposits.txt' ###fd file 
-SIP_FILE = 'sip_investments.txt' ### sip file
+# Get the absolute path of the repository directory
+REPO_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Define the file paths using the repository directory
+ACCOUNTS_FILE = os.path.join(REPO_DIR, 'accounts.txt')
+TRANSACTIONS_FILE = os.path.join(REPO_DIR, 'transactions.txt')
+FD_FILE = os.path.join(REPO_DIR, 'fixed_deposits.txt')
+SIP_FILE = os.path.join(REPO_DIR, 'sip_investments.txt')
 
 def create_account(): ### function to create account
     initial_deposit = float(input("Enter your initial deposit: "))
